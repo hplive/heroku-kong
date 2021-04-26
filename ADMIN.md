@@ -9,7 +9,7 @@ Use Kong CLI and the Admin API in a [one-off dyno](https://devcenter.heroku.com/
 ✏️ *Replace `$APP_NAME` with the Heroku app name.*
 
 ```bash
-heroku run bash --app $APP_NAME
+heroku run bash --app kong-gateway
 
 # Run Kong in the background of the one-off dyno:
 ~ $ bin/background-start
@@ -78,7 +78,7 @@ Now, access Kong's Admin API via the protected, public-facing proxy:
 
 ```bash
 # Set the request header:
-curl -H "apikey: $ADMIN_KEY" https://$APP_NAME.herokuapp.com/kong-admin/status
+curl -H "apikey: $ADMIN_KEY" https://kong-gateway.herokuapp.com/kong-admin/status
 # or use query params:
-curl https://$APP_NAME.herokuapp.com/kong-admin/status?apikey=$ADMIN_KEY
+curl https://kong-gateway.herokuapp.com/kong-admin/status?apikey=$ADMIN_KEY
 ```
